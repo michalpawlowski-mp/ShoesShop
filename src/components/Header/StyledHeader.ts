@@ -15,16 +15,19 @@ export const ShopLogo = styled.img`
 export const Cart = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
+  margin: 0 10px;
 `;
 
 export const CartIcon = styled.img`
-  width: 35px;
-  height: 35px;
+  width: 25px;
+  height: 25px;
 `;
 
 export const CartLabel = styled.span`
-  font-size: 10px;
+  font-size: 15px;
   color: #333131ff;
+  margin: 5px;
 `;
 
 export const CartCount = styled.span`

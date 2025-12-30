@@ -1,45 +1,68 @@
 import React, { useState } from "react";
-import ShoeModal from "./ShoeModal";
+import { Link } from "react-router-dom";
+import Filters from "../Filters/Filters";
+import { finalShoes } from "../../assets/data/dataShoes";
+import { formatModelName } from "../../tools/formatters";
 import {
   StyledMain,
   Shoe,
   ImgWrapper,
+  BlurredBackground,
+  ImgShoe,
   NameShoes,
   Gender,
   Price,
 } from "./StyledMain";
-import { finalShoes } from "../../assets/data/dataShoes";
-import { formatModelName } from "../../tools/formatters";
 
 const Main: React.FC = () => {
-  const [selectedShoe, setSelectedShoe] = useState<any>(null);
-  const [isOpen, setIsOpen] = useState(false);
+  const [gender, setGender] = useState<
+    "All" | "Men" | "Women" | "Boy" | "Girl"
+  >("All");
+  const [brand, setBrand] = useState<string | "All">("All");
+  const [maxPrice, setMaxPrice] = useState<number>(1000);
+
+  const brands = Array.from(new Set(finalShoes.map((s) => s.brand)));
+
+  const filteredShoes = finalShoes.filter((shoe) => {
+    if (gender !== "All" && shoe.gender !== gender) return false;
+    if (brand !== "All" && shoe.brand !== brand) return false;
+    if (shoe.price > maxPrice) return false;
+    return true;
+  });
+
   return (
     <>
+      <Filters
+        gender={gender}
+        setGender={setGender}
+        brand={brand}
+        setBrand={setBrand}
+        maxPrice={maxPrice}
+        setMaxPrice={setMaxPrice}
+        brands={brands}
+      />
+
       <StyledMain>
-        {finalShoes.map((shoe, index) => (
-          <Shoe
-            key={index}
-            onClick={() => {
-              setSelectedShoe(shoe);
-              setIsOpen(true);
-            }}
+        {filteredShoes.map((shoe) => (
+          <Link
+            key={`${shoe.brand}-${shoe.model}`}
+            to={`/${shoe.brand}/${shoe.model}`}
+            style={{ textDecoration: "none" }}
           >
-            <ImgWrapper>
-              <img src={shoe.images[2]} alt={`${shoe.brand} ${shoe.model}`} />
-            </ImgWrapper>
-            <NameShoes>
-              {shoe.brand === "NewBalance" ? "New Balance" : shoe.brand}{" "}
-              {formatModelName(shoe.model, shoe.brand)}
-            </NameShoes>
-            <Gender>{shoe.gender}</Gender>
-            <Price>{shoe.price} zł</Price>
-          </Shoe>
+            <Shoe>
+              <ImgWrapper>
+                <BlurredBackground $bg={shoe.images[2]} />
+                <ImgShoe src={shoe.images[2]} alt={shoe.model} />
+              </ImgWrapper>
+              <NameShoes>
+                {shoe.brand} {formatModelName(shoe.model)}
+              </NameShoes>
+              <Gender>{shoe.gender}</Gender>
+              <Price>{shoe.price} zł</Price>
+            </Shoe>
+          </Link>
         ))}
       </StyledMain>
-      {isOpen && selectedShoe && (
-        <ShoeModal shoe={selectedShoe} onClose={() => setIsOpen(false)} />
-      )}
     </>
   );
 };

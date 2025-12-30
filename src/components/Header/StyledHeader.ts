@@ -5,6 +5,9 @@ export const StyledHeader = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  -webkit-box-shadow: 0px 0px 4px 0px rgba(72, 72, 72, 1);
+  -moz-box-shadow: 0px 0px 4px 0px rgba(72, 72, 72, 1);
+  box-shadow: 0px 0px 4px 0px rgba(72, 72, 72, 1);
 `;
 
 export const ShopLogo = styled.img`

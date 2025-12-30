@@ -6,16 +6,20 @@ import {
   CartLabel,
   CartCount,
 } from "./StyledHeader";
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Header: React.FC = () => {
   return (
     <>
       <StyledHeader>
-        <ShopLogo
-          src={"./logo-horizontal.svg"}
-          alt="ShoesShop logo"
-          title="ShoesShop"
-        />
+        <Link to="/">
+          <ShopLogo
+            src="./logo-horizontal.svg"
+            alt="ShoesShop logo"
+            title="ShoesShop"
+          />
+        </Link>
         <Cart>
           <CartIcon src={"src/assets/cart.svg"} alt="Koszyk" />
           <CartLabel>Koszyk</CartLabel>

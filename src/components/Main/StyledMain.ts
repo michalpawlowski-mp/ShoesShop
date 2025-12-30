@@ -1,46 +1,69 @@
 import styled from "styled-components";
 
-export const StyledMain = styled.main`
-  width: 100%;
-  -webkit-box-shadow: inset 0px 0px 4px 0px rgba(72, 72, 72, 1);
-  -moz-box-shadow: inset 0px 0px 4px 0px rgba(72, 72, 72, 1);
-  box-shadow: inset 0px 0px 4px 0px rgba(72, 72, 72, 1);
-  display: flex;
-  flex-wrap: wrap;
-  position: absolute;
+// kontener całej listy
+export const StyledMain = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
 `;
 
 export const Shoe = styled.div`
-  margin: 5px;
-  width: 245px;
-  height: max-content;
-  color: black;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
   cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.2s;
+  &:hover {
+    transform: translateY(-5px);
+  }
 `;
 
 export const ImgWrapper = styled.div`
   width: 100%;
-  height: 200px;
+  height: 180px;
+  position: relative;
   overflow: hidden;
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    margin-bottom: 10px;
-  }
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const BlurredBackground = styled.div<{ $bg: string }>`
+  position: absolute;
+  inset: 0;
+  background-image: url(${(props) => props.$bg});
+  background-size: cover;
+  background-position: center;
+  filter: blur(5px);
+  transform: scale(1);
+`;
+
+export const ImgShoe = styled.img`
+  max-width: 90%;
+  max-height: 100%;
+  object-fit: contain;
+  z-index: 1;
 `;
 
 export const NameShoes = styled.h2`
   font-size: 1rem;
-  margin: 5px 0;
+  font-weight: 600;
+  margin: 0.5rem 1rem 0;
+  color: #333;
 `;
 
-export const Gender = styled.h3`
-  font-size: 0.9rem;
-  margin: 2px 0;
-  color: #555;
+export const Gender = styled.p`
+  font-size: 0.85rem;
+  color: #777;
+  margin: 0.25rem 1rem 0;
 `;
-export const Price = styled.h4`
-  margin: 2px 0;
-  font-size: 0.9rem;
+
+export const Price = styled.p`
+  font-size: 1rem;
+  font-weight: bold;
+  color: #e53935;
+  margin: 0.5rem 1rem 1rem;
 `;

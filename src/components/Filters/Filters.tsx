@@ -3,12 +3,14 @@ import {
   FiltersWrapper,
   FilterGroup,
   FilterLabel,
-  Select,
-  Option,
   PriceInputWrapper,
   PriceInput,
+  RadioGroup,
+  RadioLabel,
+  RadioInput,
 } from "./StyledFilters";
-import type { FiltersProps, Gender } from "../../types/Filters";
+import { genders } from "../../types/Filters";
+import type { FiltersProps } from "../../types/Filters";
 
 const Filters: React.FC<FiltersProps> = ({
   gender,
@@ -23,27 +25,47 @@ const Filters: React.FC<FiltersProps> = ({
     <FiltersWrapper>
       <FilterGroup>
         <FilterLabel>Płeć</FilterLabel>
-        <Select
-          value={gender}
-          onChange={(e) => setGender(e.target.value as Gender | "All")}
-        >
-          <Option value="All">Wszystkie</Option>
-          <Option value="Men">Mężczyźni</Option>
-          <Option value="Women">Kobiety</Option>
-          <Option value="Boy">Chłopcy</Option>
-          <Option value="Girl">Dziewczynki</Option>
-        </Select>
+        <RadioGroup>
+          {genders.map((g) => (
+            <RadioLabel key={g.value}>
+              <RadioInput
+                type="radio"
+                name="gender"
+                value={g.value}
+                checked={gender === g.value}
+                onChange={() => setGender(g.value)}
+              />
+              {g.label}
+            </RadioLabel>
+          ))}
+        </RadioGroup>
       </FilterGroup>
       <FilterGroup>
         <FilterLabel>Marka</FilterLabel>
-        <Select value={brand} onChange={(e) => setBrand(e.target.value)}>
-          <Option value="All">Wszystkie</Option>
+        <RadioGroup>
+          <RadioLabel>
+            <RadioInput
+              type="radio"
+              name="brand"
+              value="All"
+              checked={brand === "All"}
+              onChange={() => setBrand("All")}
+            />
+            Wszystkie
+          </RadioLabel>
           {brands.map((b) => (
-            <Option key={b} value={b}>
+            <RadioLabel key={b}>
+              <RadioInput
+                type="radio"
+                name="brand"
+                value={b}
+                checked={brand === b}
+                onChange={() => setBrand(b)}
+              />
               {b}
-            </Option>
+            </RadioLabel>
           ))}
-        </Select>
+        </RadioGroup>
       </FilterGroup>
       <PriceInputWrapper>
         <FilterLabel>Maks. cena: {maxPrice} zł</FilterLabel>

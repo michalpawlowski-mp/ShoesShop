@@ -3,7 +3,6 @@ import {
   ShopLogo,
   Cart,
   CartIcon,
-  CartLabel,
   CartCount,
 } from "./StyledHeader";
 import React from "react";
@@ -22,7 +21,6 @@ const Header: React.FC = () => {
         </Link>
         <Cart>
           <CartIcon src={"src/assets/cart.svg"} alt="Koszyk" />
-          <CartLabel>Koszyk</CartLabel>
           <CartCount>0</CartCount>
         </Cart>
       </StyledHeader>

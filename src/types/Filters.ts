@@ -9,3 +9,11 @@ export interface FiltersProps {
   setMaxPrice: (p: number) => void;
   brands: string[];
 }
+
+export const genders: { label: string; value: Gender | "All" }[] = [
+  { label: "Wszystkie", value: "All" },
+  { label: "Mężczyźni", value: "Men" },
+  { label: "Kobiety", value: "Women" },
+  { label: "Chłopcy", value: "Boy" },
+  { label: "Dziewczynki", value: "Girl" },
+];

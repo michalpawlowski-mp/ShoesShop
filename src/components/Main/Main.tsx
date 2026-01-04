@@ -1,24 +1,14 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import Filters from "../Filters/Filters";
 import { finalShoes } from "../../assets/data/dataShoes";
-import { formatModelName } from "../../tools/formatters";
-import {
-  StyledMain,
-  Shoe,
-  ImgWrapper,
-  BlurredBackground,
-  ImgShoe,
-  NameShoes,
-  Gender,
-  Price,
-} from "./StyledMain";
+import { StyledMain } from "./StyledMain";
+import ShoeList from "../ShoeList/ShoeList";
 
 const Main: React.FC = () => {
-  const [gender, setGender] = useState<
-    "All" | "Men" | "Women" | "Boy" | "Girl"
-  >("All");
+  const [gender, setGender] = useState<"All" | "Men" | "Women" | "Boy" | "Girl">("All");
+
   const [brand, setBrand] = useState<string | "All">("All");
+
   const [maxPrice, setMaxPrice] = useState<number>(1000);
 
   const brands = Array.from(new Set(finalShoes.map((s) => s.brand)));
@@ -32,39 +22,19 @@ const Main: React.FC = () => {
 
   return (
     <>
-      <Filters
-        gender={gender}
-        setGender={setGender}
-        brand={brand}
-        setBrand={setBrand}
-        maxPrice={maxPrice}
-        setMaxPrice={setMaxPrice}
-        brands={brands}
-      />
-
       <StyledMain>
-        {filteredShoes.map((shoe) => (
-          <Link
-            key={`${shoe.brand}-${shoe.model}`}
-            to={`/${shoe.brand}/${shoe.model}`}
-            style={{ textDecoration: "none" }}
-          >
-            <Shoe>
-              <ImgWrapper>
-                <BlurredBackground $bg={shoe.images[2]} />
-                <ImgShoe src={shoe.images[2]} alt={shoe.model} />
-              </ImgWrapper>
-              <NameShoes>
-                {shoe.brand} {formatModelName(shoe.model)}
-              </NameShoes>
-              <Gender>{shoe.gender}</Gender>
-              <Price>{shoe.price} zł</Price>
-            </Shoe>
-          </Link>
-        ))}
+        <Filters
+          gender={gender}
+          setGender={setGender}
+          brand={brand}
+          setBrand={setBrand}
+          maxPrice={maxPrice}
+          setMaxPrice={setMaxPrice}
+          brands={brands}
+        />
+        <ShoeList shoes={filteredShoes} />
       </StyledMain>
     </>
   );
 };
-
 export default Main;

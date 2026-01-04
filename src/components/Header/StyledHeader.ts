@@ -20,25 +20,30 @@ export const Cart = styled.div`
   align-items: center;
   justify-content: center;
   margin: 0 10px;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  &:hover {
+    background-color: #f0f0f0;
+  }
 `;
 
 export const CartIcon = styled.img`
-  width: 25px;
-  height: 25px;
-`;
-
-export const CartLabel = styled.span`
-  font-size: 15px;
-  color: #333131ff;
-  margin: 5px;
+  width: 30px;
+  height: 30px;
 `;
 
 export const CartCount = styled.span`
-  background-color: red;
-  width: 20px;
-  height: 20px;
+  background-color: gray;
+  width: 15px;
+  height: 15px;
   display: flex;
+  padding: 0.5rem;
   align-items: center;
   justify-content: center;
   border-radius: 25%;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
 `;

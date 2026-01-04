@@ -2,76 +2,60 @@ import styled from "styled-components";
 
 export const FiltersWrapper = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  align-items: center;
-  background-color: #f8f8f8;
-  padding: 15px 20px;
-  border-radius: 12px;
-  margin: 15px 10px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+  flex-direction: column;
+  gap: 24px;
+  margin: auto 5px;
+  padding: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  color: #333;
+  flex-shrink: 0;
+  height: max-content;
 `;
 
 export const FilterGroup = styled.div`
   display: flex;
   flex-direction: column;
-  min-width: 120px;
+  gap: 8px;
 `;
 
-export const FilterLabel = styled.label`
+export const FilterLabel = styled.span`
   font-weight: 600;
-  font-size: 0.9rem;
-  margin-bottom: 5px;
-  color: #333;
+  font-size: 14px;
 `;
 
 export const Select = styled.select`
-  padding: 8px 12px;
-  border-radius: 8px;
+  padding: 8px;
+  border-radius: 6px;
   border: 1px solid #ccc;
-  font-size: 0.9rem;
-  background-color: #fff;
-  cursor: pointer;
-  transition: border-color 0.2s ease;
-
-  &:hover {
-    border-color: #888;
-  }
-
-  &:focus {
-    outline: none;
-    border-color: #555;
-  }
 `;
 
 export const Option = styled.option``;
 
+export const RadioGroup = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+`;
+
+export const RadioLabel = styled.label`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 14px;
+`;
+
+export const RadioInput = styled.input`
+  cursor: pointer;
+`;
+
 export const PriceInputWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  gap: 8px;
 `;
 
 export const PriceInput = styled.input`
-  margin-top: 5px;
-  cursor: pointer;
-  -webkit-appearance: none;
-  appearance: none;
-  height: 6px;
-  border-radius: 5px;
-  background: #ddd;
-
-  &::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 18px;
-    height: 18px;
-    background: #333;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background 0.2s ease;
-  }
-
-  &::-webkit-slider-thumb:hover {
-    background: #555;
-  }
+  width: 100%;
 `;

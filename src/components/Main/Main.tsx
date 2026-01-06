@@ -9,14 +9,16 @@ const Main: React.FC = () => {
 
   const [brand, setBrand] = useState<string | "All">("All");
 
-  const [maxPrice, setMaxPrice] = useState<number>(1000);
+  const [minPrice, setMinPrice] = useState<number | "">("");
+  const [maxPrice, setMaxPrice] = useState<number | "">("");
 
   const brands = Array.from(new Set(finalShoes.map((s) => s.brand)));
 
   const filteredShoes = finalShoes.filter((shoe) => {
     if (gender !== "All" && shoe.gender !== gender) return false;
     if (brand !== "All" && shoe.brand !== brand) return false;
-    if (shoe.price > maxPrice) return false;
+    if (maxPrice !== "" && shoe.price > maxPrice) return false;
+    if (minPrice !== "" && shoe.price < minPrice) return false;
     return true;
   });
 
@@ -30,6 +32,8 @@ const Main: React.FC = () => {
           setBrand={setBrand}
           maxPrice={maxPrice}
           setMaxPrice={setMaxPrice}
+          minPrice={minPrice}
+          setMinPrice={setMinPrice}
           brands={brands}
         />
         <ShoeList shoes={filteredShoes} />

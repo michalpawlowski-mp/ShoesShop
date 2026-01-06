@@ -53,9 +53,39 @@ export const RadioInput = styled.input`
 export const PriceInputWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  gap: 10px;
+`;
+
+export const PriceInputsRow = styled.div`
+  display: flex;
   gap: 8px;
 `;
 
 export const PriceInput = styled.input`
   width: 100%;
+  padding: 8px 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+
+  &:focus {
+    border-color: #111;
+    box-shadow: 0 0 0 1px #111;
+  }
+
+  &::placeholder {
+    color: #aaa;
+  }
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  &[type="number"] {
+    -moz-appearance: textfield;
+  }
 `;

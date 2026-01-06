@@ -2,8 +2,9 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const StyledShoeList = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1.5rem;
   padding: 10px;
   width: 100%;
@@ -13,6 +14,8 @@ export const StyledShoeList = styled.div`
 
 export const StyledLink = styled(Link)`
   text-decoration: none;
+  width: 100%;
+  max-width: 300px;
 `;
 
 export const Shoe = styled.div`

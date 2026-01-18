@@ -16,8 +16,11 @@ import {
   SizesWrapper,
   SizeButton,
   AddToCartButton,
-} from "./StyledShoePage";
+} from "./ShoePage.style";
+import { useCart } from "../Context/CartContext";
+
 const ShoePage = () => {
+  const { addToCart } = useCart();
   const { model } = useParams<"model">();
   const shoe: Shoe | undefined = finalShoes.find((s) => s.model === model);
   const [selectedImage, setSelectedImage] = useState<number>(0);
@@ -25,6 +28,7 @@ const ShoePage = () => {
   if (!shoe) {
     return <h2>Nie znaleziono produktu</h2>;
   }
+
   return (
     <ShoePageWrapper>
       <ImagesWrapper>
@@ -41,10 +45,12 @@ const ShoePage = () => {
         </Thumbnails>
       </ImagesWrapper>
       <InfoWrapper>
-        <ShoeTitle>
-          {shoe.brand} {formatModelName(shoe.model)}
-        </ShoeTitle>
-        <ShoeInfo>Płeć: {shoe.gender}</ShoeInfo>
+        <div>
+          <ShoeTitle>
+            {shoe.brand} {formatModelName(shoe.model)}
+          </ShoeTitle>
+          <ShoeInfo>Płeć: {shoe.gender}</ShoeInfo>
+        </div>
         <ShoePrice>Cena: {shoe.price} zł</ShoePrice>
         <SizesWrapper>
           <p>Wybierz rozmiar:</p>
@@ -58,7 +64,13 @@ const ShoePage = () => {
             </SizeButton>
           ))}
         </SizesWrapper>
-        <AddToCartButton disabled={!selectedSize}>
+        <AddToCartButton
+          disabled={!selectedSize}
+          onClick={() => {
+            if (!selectedSize) return;
+            addToCart(shoe, selectedSize);
+          }}
+        >
           Dodaj do koszyka
         </AddToCartButton>
       </InfoWrapper>

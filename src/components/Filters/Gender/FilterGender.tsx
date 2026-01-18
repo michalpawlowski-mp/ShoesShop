@@ -4,9 +4,9 @@ import {
   RadioGroup,
   RadioLabel,
   RadioInput,
-} from "./StyledFilters";
-import { genders } from "../../types/Filters";
-import type { FilterGenderProps } from "../../types/Filters";
+} from "../Filters.styles";
+import { genders } from "../../../types/Filters";
+import type { FilterGenderProps } from "../../../types/Filters";
 
 const FilterGender: React.FC<FilterGenderProps> = ({ gender, setGender }) => {
   return (

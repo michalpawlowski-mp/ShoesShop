@@ -5,11 +5,13 @@ export const StyledShoeList = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-content: flex-start;
   gap: 1.5rem;
   padding: 10px;
   width: 100%;
   overflow-y: auto;
   margin: 3px;
+  padding-bottom: 100px;
 `;
 
 export const StyledLink = styled(Link)`
@@ -59,21 +61,21 @@ export const ImgShoe = styled.img`
 `;
 
 export const NameShoes = styled.h2`
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 600;
-  margin: 0.5rem 0.9rem 0;
+  margin: 0.5rem 0.8rem 0;
   color: #333;
 `;
 
 export const Gender = styled.p`
   font-size: 0.85rem;
   color: #777;
-  margin: 0.25rem 1rem 0;
+  margin: 0.25rem 0.8rem 0;
 `;
 
 export const Price = styled.p`
   font-size: 1rem;
   font-weight: bold;
   color: #e53935;
-  margin: 0.5rem 1rem 1rem;
+  margin: 0.5rem 0.9rem 1rem;
 `;

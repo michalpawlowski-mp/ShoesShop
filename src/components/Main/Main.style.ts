@@ -2,5 +2,5 @@ import styled from "styled-components";
 
 export const StyledMain = styled.main`
   display: flex;
-  height: 100vh;
+  height: 100%;
 `;

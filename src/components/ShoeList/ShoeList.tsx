@@ -9,7 +9,7 @@ import {
   Gender,
   Price,
   StyledLink,
-} from "./StyledShoeList";
+} from "./ShoeList.style";
 
 type Props = {
   shoes: typeof import("../../assets/data/dataShoes").finalShoes;

@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Main from "./components/Main/Main";
 import ShoePage from "./components/ShoePage/ShoePage";
+import CartPage from "./components/CartPage/CartPage";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/:brand/:model" element={<ShoePage />} />
+        <Route path="/cart" element={<CartPage />} />
       </Routes>
     </>
   );

@@ -8,3 +8,12 @@ export type Shoe = {
   sizes: number[];
   images: string[];
 };
+
+export type CartItem = {
+  brand: string;
+  model: string;
+  price: number;
+  image: string;
+  size: number;
+  quantity: number;
+};

@@ -22,10 +22,16 @@ export interface FilterPriceProps {
   setMaxPrice: (p: PriceValue) => void;
 }
 
+export interface FilterSearchProps {
+  search: string;
+  setSearch: (value: string) => void;
+}
+
 export interface FiltersProps
   extends FilterGenderProps,
     FilterBrandProps,
-    FilterPriceProps {}
+    FilterPriceProps,
+    FilterSearchProps {}
 
 export const genders: { label: string; value: Gender | "All" }[] = [
   { label: "Wszystkie", value: "All" },

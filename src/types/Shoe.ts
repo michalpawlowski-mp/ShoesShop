@@ -1,4 +1,4 @@
-export type Gender = "Men" | "Woman" | "Boy" | "Girl";
+export type Gender = "Men" | "Women" | "Boy" | "Girl";
 
 export type Shoe = {
   brand: string;

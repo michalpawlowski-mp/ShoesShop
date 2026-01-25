@@ -1,17 +1,20 @@
 import styled from "styled-components";
 
+export const StyledFilters = styled.div`
+  height: 100%;
+`;
+
 export const FiltersWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  margin: 15px 10px;
-  padding: 15px;
+  gap: 25px;
+  margin: 15px 0px 15px 10px;
+  padding: 10px;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   color: #333;
   flex-shrink: 0;
   height: max-content;
-  max-width: 155px;
 `;
 
 export const FilterGroup = styled.div`
@@ -49,7 +52,9 @@ export const PriceInput = styled.input`
   border: 1px solid #ccc;
   border-radius: 6px;
   outline: none;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
 
   &:focus {
     border-color: #111;

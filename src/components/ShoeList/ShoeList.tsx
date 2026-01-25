@@ -1,43 +1,43 @@
 import { formatModelName } from "../../tools/formatters";
 import {
-  StyledShoeList,
-  Shoe,
+  ShoeList,
+  ShoeLink,
+  ShoeCard,
   ImgWrapper,
   BlurredBackground,
-  ImgShoe,
-  NameShoes,
-  Gender,
-  Price,
-  StyledLink,
+  ShoeImage,
+  ShoeName,
+  ShoeGender,
+  ShoePrice,
 } from "./ShoeList.style";
 
 type Props = {
   shoes: typeof import("../../assets/data/dataShoes").finalShoes;
 };
 
-const ShoeList: React.FC<Props> = ({ shoes }) => {
+const ShoeListComponent: React.FC<Props> = ({ shoes }) => {
   return (
-    <StyledShoeList>
-      {shoes.map((shoe) => (
-        <StyledLink
-          key={`${shoe.brand}-${shoe.model}`}
-          to={`/${shoe.brand}/${shoe.model}`}
+    <ShoeList>
+      {shoes.map((shoe, index) => (
+        <ShoeLink
+          key={`${shoe.brand}-${shoe.model}-${index}`}
+          to={`/${encodeURIComponent(shoe.brand)}/${encodeURIComponent(shoe.model)}`}
         >
-          <Shoe>
+          <ShoeCard>
             <ImgWrapper>
               <BlurredBackground $bg={shoe.images[2]} />
-              <ImgShoe src={shoe.images[2]} alt={shoe.model} />
+              <ShoeImage src={shoe.images[2]} alt={`${shoe.brand} ${shoe.model}`} />
             </ImgWrapper>
-            <NameShoes>
+            <ShoeName>
               {shoe.brand} {formatModelName(shoe.model)}
-            </NameShoes>
-            <Gender>{shoe.gender}</Gender>
-            <Price>{shoe.price} zł</Price>
-          </Shoe>
-        </StyledLink>
+            </ShoeName>
+            <ShoeGender>{shoe.gender}</ShoeGender>
+            <ShoePrice>{shoe.price} zł</ShoePrice>
+          </ShoeCard>
+        </ShoeLink>
       ))}
-    </StyledShoeList>
+    </ShoeList>
   );
 };
 
-export default ShoeList;
+export default ShoeListComponent;

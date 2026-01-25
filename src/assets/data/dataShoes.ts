@@ -28,7 +28,7 @@ export const finalShoes: Shoe[] = shoes.map((shoe, index) => {
 
   return {
     ...shoe,
-    gender: shoe.gender === "Women" ? "Woman" : shoe.gender,
+    gender: shoe.gender === "Women" ? "Women" : shoe.gender,
     price: priceShoes[index],
     sizes,
   };

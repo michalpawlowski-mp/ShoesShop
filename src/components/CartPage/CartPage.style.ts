@@ -1,18 +1,21 @@
 import { Link } from "react-router";
 import styled from "styled-components";
 
+export const CartContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+`;
+
 export const CartWrapper = styled.div`
   max-width: 800px;
-  margin: 20px auto;
+  height: max-content;
+  margin: 15px;
   padding: 20px;
   background-color: #fff;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-
-  @media (max-width: 768px) {
-    margin: 20px;
-    padding: 15px;
-  }
 `;
 
 export const CartTitle = styled.h2`
@@ -25,18 +28,21 @@ export const CartTitle = styled.h2`
 `;
 
 export const EmptyCartWrapper = styled.div`
+  display: flex;
+  align-self: center;
+  justify-content: center;
   text-align: center;
-  font-size: 1.2rem;
+  flex-direction: column;
   color: #666;
-  margin-top: 50px;
+  width: 100%;
+  height: 100%;
   padding: 40px;
-  background: #f9f9f9;
   border-radius: 8px;
 `;
 
 export const EmptyCartInfo = styled.h1`
   color: #000;
-  font-size: 1.4rem;
+  font-size: 2rem;
   margin: 20px 10px;
 `;
 
@@ -45,10 +51,12 @@ export const StyledLink = styled(Link)`
   background-color: #f58220;
   color: #ffffff;
   padding: 12px 24px;
-  font-size: 1rem;
+  margin: 0px auto;
+  font-size: 1.4rem;
   font-weight: bold;
   text-decoration: none;
   border-radius: 8px;
+  margin-bottom: 150px;
   transition:
     background-color 0.3s ease,
     transform 0.2s ease;

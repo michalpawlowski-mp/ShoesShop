@@ -29,7 +29,7 @@ export const Cart = styled.div`
   align-items: center;
   justify-content: center;
   padding: 12px;
-  border-radius: 50%;
+  border-radius: 25%;
   cursor: pointer;
   position: relative;
   transition: background-color 0.3s ease;
@@ -52,7 +52,7 @@ export const CartCount = styled.span`
   min-width: 18px;
   height: 18px;
   display: flex;
-  align-items: center;
+  align-content: center;
   justify-content: center;
   border-radius: 50%;
   position: absolute;

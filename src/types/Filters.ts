@@ -27,11 +27,13 @@ export interface FilterSearchProps {
   setSearch: (value: string) => void;
 }
 
+export type FilterResetProps = Pick<
+  FiltersProps,
+  "setGender" | "setBrand" | "setSearch" | "setMinPrice" | "setMaxPrice"
+>;
+
 export interface FiltersProps
-  extends FilterGenderProps,
-    FilterBrandProps,
-    FilterPriceProps,
-    FilterSearchProps {}
+  extends FilterGenderProps, FilterBrandProps, FilterPriceProps, FilterSearchProps {}
 
 export const genders: { label: string; value: Gender | "All" }[] = [
   { label: "Wszystkie", value: "All" },

@@ -10,9 +10,9 @@ export const ImagesWrapper = styled.div`
   align-items: center;
   gap: 10px;
   margin-bottom: 10px;
-  -webkit-box-shadow: 14px 13px 27px -25px rgba(66, 68, 90, 1);
-  -moz-box-shadow: 14px 13px 27px -25px rgba(66, 68, 90, 1);
-  box-shadow: 14px 13px 27px -25px rgba(66, 68, 90, 1);
+  -webkit-box-shadow: 7px 7px 12px -1px rgba(36, 38, 43, 1);
+  -moz-box-shadow: 7px 7px 12px -1px rgba(36, 38, 43, 1);
+  box-shadow: 7px 7px 12px -1px rgba(36, 38, 43, 1);
   @media (min-width: 800px) {
     margin: 0;
     width: 50%;

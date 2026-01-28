@@ -8,6 +8,7 @@ export const ShoePageWrapper = styled.div`
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
+
   @media (min-width: 800px) {
     flex-direction: row;
   }
@@ -20,7 +21,9 @@ export const ShoeDetails = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 80px;
+  -webkit-box-shadow: 7px 7px 12px -1px rgba(36, 38, 43, 1);
+  -moz-box-shadow: 7px 7px 12px -1px rgba(36, 38, 43, 1);
+  box-shadow: 7px 7px 12px -1px rgba(36, 38, 43, 1);
   @media (min-width: 800px) {
     width: 50%;
     margin-left: 5px;

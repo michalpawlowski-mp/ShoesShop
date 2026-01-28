@@ -1,17 +1,19 @@
 import { shoes } from "./shoes";
 import type { Shoe } from "../../types/Shoe";
 
-const sizingMan: number[] = [
-  40, 40.5, 41, 41.5, 42, 42.5, 43, 43.5, 44, 44.5, 45, 45.5, 46, 46.5, 47, 47.5, 48,
-  48.5, 49, 49.5, 50,
-];
+const generateSizes = (from: number, to: number, step = 0.5): number[] => {
+  const sizes: number[] = [];
 
-const sizingWoman: number[] = [
-  36, 36.5, 37, 37.5, 38, 38.5, 39, 39.5, 40, 40.5, 41, 41.5, 42, 42.5, 43, 43.5, 44,
-  44.5, 45, 45.5, 46, 46.5, 47, 47.5, 48,
-];
+  for (let size = from; size <= to; size += step) {
+    sizes.push(Number(size.toFixed(1)));
+  }
 
-const sizingKids: number[] = [35, 35.5, 36, 36.5, 37, 37.5, 38, 38.5, 39, 39.5, 40];
+  return sizes;
+};
+
+export const sizingMan = generateSizes(40, 48);
+export const sizingWoman = generateSizes(36, 43);
+export const sizingKids = generateSizes(28, 35);
 
 const priceShoes: number[] = [
   249, 249, 319, 499, 299, 349, 229, 279, 299, 499, 339, 499, 199, 219, 499, 379, 579,

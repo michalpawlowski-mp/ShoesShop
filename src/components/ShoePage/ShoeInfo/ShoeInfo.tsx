@@ -19,12 +19,14 @@ const ShoeInfo: React.FC<ShoeInfoProps> = ({ shoe, selectedSize, onSelectSize })
   return (
     <InfoWrapper>
       <div>
-        <ShoeTitle>
-          {shoe.brand} {formatModelName(shoe.model)}
-        </ShoeTitle>
-        <ShoeGender>Płeć: {shoe.gender}</ShoeGender>
+        <div>
+          <ShoeTitle>
+            {shoe.brand} {formatModelName(shoe.model)}
+          </ShoeTitle>
+          <ShoeGender>Płeć: {shoe.gender}</ShoeGender>
+        </div>
+        <ShoePrice>Cena: {shoe.price} zł</ShoePrice>
       </div>
-      <ShoePrice>Cena: {shoe.price} zł</ShoePrice>
       <SizesWrapper>
         <p>Wybierz rozmiar:</p>
         {shoe.sizes.map((size) => (

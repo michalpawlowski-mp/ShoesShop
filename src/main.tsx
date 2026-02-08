@@ -8,10 +8,10 @@ import { CartProvider } from "./components/Context/CartContext.tsx";
 createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <GlobalStyle />
-    <BrowserRouter>
+    <BrowserRouter basename="/ShoesShop">
       <CartProvider>
         <App />
       </CartProvider>
     </BrowserRouter>
-  </React.StrictMode>
+  </React.StrictMode>,
 );

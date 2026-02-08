@@ -2,25 +2,25 @@ import { StyledHeader, ShopLogo, Cart, CartIcon, CartCount } from "./Header.styl
 import React from "react";
 import { Link } from "react-router-dom";
 import { useCart } from "../Context/CartContext";
+import logoSvg from "/logo-horizontal.svg";
+import cartSvg from "../../assets/cart.svg";
+
 const Header: React.FC = () => {
   const { cartItems } = useCart();
-
   const totalCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
-    <>
-      <StyledHeader>
-        <Link to="/">
-          <ShopLogo src="/logo-horizontal.svg" alt="ShoesShop logo" title="ShoesShop" />
-        </Link>
-        <Link to="/cart">
-          <Cart>
-            <CartIcon src="/src/assets/cart.svg" alt="Koszyk" />
-            <CartCount>{totalCount}</CartCount>
-          </Cart>
-        </Link>
-      </StyledHeader>
-    </>
+    <StyledHeader>
+      <Link to="/">
+        <ShopLogo src={logoSvg} alt="ShoesShop logo" title="ShoesShop" />
+      </Link>
+      <Link to="/cart">
+        <Cart>
+          <CartIcon src={cartSvg} alt="Koszyk" />
+          <CartCount>{totalCount}</CartCount>
+        </Cart>
+      </Link>
+    </StyledHeader>
   );
 };
 

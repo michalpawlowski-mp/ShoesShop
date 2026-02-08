@@ -526,4 +526,4 @@ body {
   width: 100%;
   height: 100%;
 }
-`;vy.createRoot(document.getElementById("root")).render(B.jsxs(kt.StrictMode,{children:[B.jsx(Rx,{}),B.jsx(Gg,{children:B.jsx(t1,{children:B.jsx(Cx,{})})})]}));
+`;vy.createRoot(document.getElementById("root")).render(B.jsxs(kt.StrictMode,{children:[B.jsx(Rx,{}),B.jsx(Gg,{basename:"/ShoesShop",children:B.jsx(t1,{children:B.jsx(Cx,{})})})]}));

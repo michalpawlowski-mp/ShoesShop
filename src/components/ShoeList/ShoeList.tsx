@@ -9,6 +9,10 @@ import {
   ShoeName,
   ShoeGender,
   ShoePrice,
+  EmptyStateWrapper,
+  IconCircle,
+  Title,
+  Subtitle,
 } from "./ShoeList.style";
 
 type Props = {
@@ -16,6 +20,19 @@ type Props = {
 };
 
 const ShoeListComponent: React.FC<Props> = ({ shoes }) => {
+  if (shoes.length === 0) {
+    return (
+      <EmptyStateWrapper>
+        <IconCircle>👟</IconCircle>
+        <Title>Brak produktów spełniających wybrane kryteria</Title>
+        <Subtitle>
+          Niestety nie znaleźliśmy tego, czego szukasz. Spróbuj zmienić filtry lub wpisać
+          inną frazę.
+        </Subtitle>
+      </EmptyStateWrapper>
+    );
+  }
+
   return (
     <ShoeList>
       {shoes.map((shoe, index) => (

@@ -1,73 +1,45 @@
-# React + TypeScript + Vite
+# Projekt: ShoesShop
+<image-card alt="Vite" src="https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62C" ></image-card>
+<image-card alt="React" src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" ></image-card>
+<image-card alt="TypeScript" src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" ></image-card>
+<image-card alt="Tailwind CSS" src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" ></image-card>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📌 Opis projektu
+ShoesShop to nowoczesna, responsywna aplikacja frontendowa imitująca sklep internetowy z butami.  
+Zbudowana w oparciu o Vite + React + TypeScript + Tailwind CSS.  
+Projekt skupia się na czystym UI, komponentowej architekturze, zarządzaniu stanem i dobrym UX – idealny jako przykład sklepu e-commerce.
 
-Currently, two official plugins are available:
+## 🌐 Demo
+🔗 [Zobacz na żywo](https://michalpawlowski-mp.github.io/ShoesShop/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Uruchamianie projektu
+### 1️⃣ Klonowanie repozytorium
+``` git clone https://github.com/michalpawlowski-mp/ShoesShop.git  ```
+``` cd ShoesShop```
 
-## React Compiler
+### 2️⃣ Instalacja zależności
+``` npm install  ```
+lub  
+``` yarn install  ```
+lub  
+``` pnpm install ```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 3️⃣ Uruchomienie projektu
+``` npm run dev  ```
+lub  
+``` yarn dev  ```
+lub  
+``` pnpm dev ```
 
-## Expanding the ESLint configuration
+Aplikacja powinna być dostępna pod adresem:  
+http://localhost:5173/  (standardowy port Vite)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠 Technologie
+- [Vite](https://vitejs.dev/)
+- [React](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+💡 Stworzony przez [Michał Pawłowski (LinkedIn)](https://www.linkedin.com/in/michalpawlowski-mp/)

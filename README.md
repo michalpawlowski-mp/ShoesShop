@@ -14,22 +14,38 @@ Projekt skupia się na czystym UI, komponentowej architekturze, zarządzaniu sta
 
 ## 🚀 Uruchamianie projektu
 ### 1️⃣ Klonowanie repozytorium
-``` git clone https://github.com/michalpawlowski-mp/ShoesShop.git  ```
-``` cd ShoesShop```
+```bash
+git clone https://github.com/michalpawlowski-mp/ShoesShop.git 
+```
+```bash
+cd ShoesShop
+```
 
 ### 2️⃣ Instalacja zależności
-``` npm install  ```
+```bash 
+npm install  
+```
 lub  
-``` yarn install  ```
+```bash
+yarn install  
+```
 lub  
-``` pnpm install ```
+```bash
+pnpm install
+```
 
 ### 3️⃣ Uruchomienie projektu
-``` npm run dev  ```
+```bash 
+npm run dev  
+```
 lub  
-``` yarn dev  ```
+```bash
+yarn dev 
+```
 lub  
-``` pnpm dev ```
+```bash 
+pnpm dev 
+```
 
 Aplikacja powinna być dostępna pod adresem:  
 http://localhost:5173/  (standardowy port Vite)

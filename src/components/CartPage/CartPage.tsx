@@ -1,21 +1,5 @@
 import { useCart } from "../Context/CartContext";
-import {
-  CartContainer,
-  CartWrapper,
-  CartTitle,
-  EmptyCartWrapper,
-  EmptyCartInfo,
-  StyledLink,
-  CartItem,
-  CartItemInfo,
-  ItemName,
-  ItemDetails,
-  ItemPrice,
-  RemoveButton,
-  Summary,
-  TotalPrice,
-  ItemImage,
-} from "./CartPage.style";
+import * as S from "./CartPage.style";
 import { formatModelName } from "../../tools/formatters";
 
 const CartPage: React.FC = () => {
@@ -28,41 +12,43 @@ const CartPage: React.FC = () => {
 
   if (cartItems.length === 0) {
     return (
-      <EmptyCartWrapper>
-        <EmptyCartInfo>Koszyk jest pusty.</EmptyCartInfo>
-        <StyledLink to="/">Powrót do strony głownej</StyledLink>
-      </EmptyCartWrapper>
+      <S.EmptyCartWrapper>
+        <S.EmptyCartInfo>Koszyk jest pusty.</S.EmptyCartInfo>
+        <S.StyledLink to="/">Powrót do strony głownej</S.StyledLink>
+      </S.EmptyCartWrapper>
     );
   }
 
   return (
-    <CartContainer>
-      <CartWrapper>
-        <CartTitle>Koszyk</CartTitle>
+    <S.CartContainer>
+      <S.CartWrapper>
+        <S.CartTitle>Koszyk</S.CartTitle>
         {cartItems.map((item) => (
-          <CartItem key={`${item.shoe.model}-${item.size}`}>
-            <ItemImage
+          <S.CartItem key={`${item.shoe.model}-${item.size}`}>
+            <S.ItemImage
               src={item.shoe.images[0]}
               alt={`${item.shoe.brand} ${item.shoe.model}`}
             />
-            <CartItemInfo>
-              <ItemName>
+            <S.CartItemInfo>
+              <S.ItemName>
                 {item.shoe.brand} {formatModelName(item.shoe.model)}
-              </ItemName>
-              <ItemDetails>Rozmiar: {item.size}</ItemDetails>
-              <ItemDetails>Ilość: {item.quantity}</ItemDetails>
-              <RemoveButton onClick={() => removeFromCart(item.shoe.model, item.size)}>
+              </S.ItemName>
+              <S.ItemDetails>Rozmiar: {item.size}</S.ItemDetails>
+              <S.ItemDetails>Ilość: {item.quantity}</S.ItemDetails>
+              <S.RemoveButton
+                onClick={() => removeFromCart(item.shoe.model, item.size)}
+              >
                 Usuń
-              </RemoveButton>
-            </CartItemInfo>
-            <ItemPrice>{item.shoe.price * item.quantity} zł</ItemPrice>
-          </CartItem>
+              </S.RemoveButton>
+            </S.CartItemInfo>
+            <S.ItemPrice>{item.shoe.price * item.quantity} zł</S.ItemPrice>
+          </S.CartItem>
         ))}
-        <Summary>
-          <TotalPrice>Suma: {totalPrice} zł</TotalPrice>
-        </Summary>
-      </CartWrapper>
-    </CartContainer>
+        <S.Summary>
+          <S.TotalPrice>Suma: {totalPrice} zł</S.TotalPrice>
+        </S.Summary>
+      </S.CartWrapper>
+    </S.CartContainer>
   );
 };
 

@@ -1,45 +1,36 @@
-import {
-  InfoWrapper,
-  ShoeTitle,
-  ShoeGender,
-  ShoePrice,
-  SizesWrapper,
-  SizeButton,
-} from "./SheoInfo.styles";
+import * as S from "./SheoInfo.styles";
 import { formatModelName } from "../../../tools/formatters";
-import type { Shoe } from "../../../types/Shoe";
+import type { ShoeInfoProps } from "../../../types";
 
-interface ShoeInfoProps {
-  shoe: Shoe;
-  selectedSize: number | null;
-  onSelectSize: (size: number) => void;
-}
-
-const ShoeInfo: React.FC<ShoeInfoProps> = ({ shoe, selectedSize, onSelectSize }) => {
+const ShoeInfo: React.FC<ShoeInfoProps> = ({
+  shoe,
+  selectedSize,
+  onSelectSize,
+}) => {
   return (
-    <InfoWrapper>
+    <S.InfoWrapper>
       <div>
         <div>
-          <ShoeTitle>
+          <S.ShoeTitle>
             {shoe.brand} {formatModelName(shoe.model)}
-          </ShoeTitle>
-          <ShoeGender>Płeć: {shoe.gender}</ShoeGender>
+          </S.ShoeTitle>
+          <S.ShoeGender>Płeć: {shoe.gender}</S.ShoeGender>
         </div>
-        <ShoePrice>Cena: {shoe.price} zł</ShoePrice>
+        <S.ShoePrice>Cena: {shoe.price} zł</S.ShoePrice>
       </div>
-      <SizesWrapper>
+      <S.SizesWrapper>
         <p>Wybierz rozmiar:</p>
         {shoe.sizes.map((size) => (
-          <SizeButton
+          <S.SizeButton
             key={size}
             selected={size === selectedSize}
             onClick={() => onSelectSize(size)}
           >
             {size}
-          </SizeButton>
+          </S.SizeButton>
         ))}
-      </SizesWrapper>
-    </InfoWrapper>
+      </S.SizesWrapper>
+    </S.InfoWrapper>
   );
 };
 

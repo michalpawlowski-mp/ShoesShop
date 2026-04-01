@@ -1,11 +1,5 @@
 import { AddToCartButton } from "./AddToCart.styles";
-import type { Shoe } from "../../../types/Shoe";
-
-interface AddToCartProps {
-  shoe: Shoe;
-  selectedSize: number | null;
-  onAdd: (shoe: Shoe, size: number) => void;
-}
+import type { AddToCartProps } from "../../../types";
 
 const AddToCart: React.FC<AddToCartProps> = ({ shoe, selectedSize, onAdd }) => {
   return (

@@ -1,4 +1,4 @@
-export type Gender = "Men" | "Women" | "Boy" | "Girl";
+export type Gender = "All" | "Men" | "Women" | "Boy" | "Girl";
 
 export type Shoe = {
   brand: string;
@@ -7,13 +7,4 @@ export type Shoe = {
   price: number;
   sizes: number[];
   images: string[];
-};
-
-export type CartItem = {
-  brand: string;
-  model: string;
-  price: number;
-  image: string;
-  size: number;
-  quantity: number;
 };

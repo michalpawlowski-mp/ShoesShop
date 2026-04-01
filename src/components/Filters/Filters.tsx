@@ -3,7 +3,7 @@ import { StyledFilters, FiltersWrapper } from "./Filters.styles";
 import FilterGender from "./Gender/FilterGender";
 import FilterBrand from "./Brand/FilterBrand";
 import FilterPrice from "./Price/FilterPrice";
-import type { FiltersProps } from "../../types/Filters";
+import type { FiltersProps } from "../../types/filters";
 import FilterSearch from "./Search/FilterSearch";
 import FilterReset from "./Reset/FilterReset";
 

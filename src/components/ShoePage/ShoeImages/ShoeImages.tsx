@@ -1,11 +1,10 @@
-import { ImagesWrapper, Thumbnails, Thumbnail, MainImage } from "./ShoeImages.styles";
-
-interface ShoeImagesProps {
-  images: string[];
-  model: string;
-  selectedImage: number;
-  onSelectImage: (index: number) => void;
-}
+import {
+  ImagesWrapper,
+  Thumbnails,
+  Thumbnail,
+  MainImage,
+} from "./ShoeImages.styles";
+import type { ShoeImagesProps } from "../../../types";
 
 const ShoeImages: React.FC<ShoeImagesProps> = ({
   images,
@@ -31,5 +30,3 @@ const ShoeImages: React.FC<ShoeImagesProps> = ({
 };
 
 export default ShoeImages;
-
-

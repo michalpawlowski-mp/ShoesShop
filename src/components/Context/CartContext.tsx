@@ -1,17 +1,5 @@
 import { createContext, useContext, useState, useEffect } from "react";
-import type { Shoe } from "../../types/Shoe";
-
-type CartItem = {
-  shoe: Shoe;
-  size: number;
-  quantity: number;
-};
-
-type CartContextType = {
-  cartItems: CartItem[];
-  addToCart: (shoe: Shoe, size: number) => void;
-  removeFromCart: (shoeModel: string, size: number) => void;
-};
+import type { CartContextType, CartItem, Shoe } from "../../types/";
 
 const CartContext = createContext<CartContextType | null>(null);
 
@@ -33,7 +21,9 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
 
       if (existingItem) {
         return prev.map((item) =>
-          item === existingItem ? { ...item, quantity: item.quantity + 1 } : item,
+          item === existingItem
+            ? { ...item, quantity: item.quantity + 1 }
+            : item,
         );
       }
 
@@ -43,7 +33,9 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
 
   const removeFromCart = (shoeModel: string, size: number) => {
     setCartItems((prev) =>
-      prev.filter((item) => !(item.shoe.model === shoeModel && item.size === size)),
+      prev.filter(
+        (item) => !(item.shoe.model === shoeModel && item.size === size),
+      ),
     );
   };
 

@@ -1,7 +1,7 @@
 import { FilterGroup } from "../Filters.styles";
 import { ResetButton } from "./FilterReset.style";
 import React from "react";
-import type { FilterResetProps } from "../../../types/Filters";
+import type { FilterResetProps } from "../../../types/filters";
 
 const FilterReset: React.FC<FilterResetProps> = ({
   setGender,

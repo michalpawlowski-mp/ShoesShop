@@ -1,4 +1,4 @@
-import type { FilterBrandProps } from "../../../types/Filters";
+import type { FilterBrandProps } from "../../../types/";
 import {
   FilterGroup,
   FilterLabel,
@@ -7,7 +7,11 @@ import {
   RadioInput,
 } from "../Filters.styles";
 
-const FilterBrand: React.FC<FilterBrandProps> = ({ brand, setBrand, brands }) => {
+const FilterBrand: React.FC<FilterBrandProps> = ({
+  brand,
+  setBrand,
+  brands,
+}) => {
   return (
     <>
       <FilterGroup>

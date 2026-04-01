@@ -1,4 +1,4 @@
-import type { FilterSearchProps } from "../../../types/Filters";
+import type { FilterSearchProps } from "../../../types/filters";
 import { FilterGroup, SearchInput } from "../Filters.styles";
 
 const FilterSearch: React.FC<FilterSearchProps> = ({ search, setSearch }) => {

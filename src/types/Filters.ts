@@ -1,6 +1,8 @@
-export type Gender = "Men" | "Women" | "Boy" | "Girl";
+import type { Gender } from "./shoe";
 
 export type GenderFilterValue = Gender | "All";
+
+export type PriceValue = number | "";
 
 export interface FilterGenderProps {
   gender: GenderFilterValue;
@@ -12,8 +14,6 @@ export interface FilterBrandProps {
   setBrand: (b: string | "All") => void;
   brands: string[];
 }
-
-export type PriceValue = number | "";
 
 export interface FilterPriceProps {
   minPrice: PriceValue;
@@ -33,12 +33,8 @@ export type FilterResetProps = Pick<
 >;
 
 export interface FiltersProps
-  extends FilterGenderProps, FilterBrandProps, FilterPriceProps, FilterSearchProps {}
-
-export const genders: { label: string; value: Gender | "All" }[] = [
-  { label: "Wszystkie", value: "All" },
-  { label: "Mężczyźni", value: "Men" },
-  { label: "Kobiety", value: "Women" },
-  { label: "Chłopcy", value: "Boy" },
-  { label: "Dziewczynki", value: "Girl" },
-];
+  extends
+    FilterGenderProps,
+    FilterBrandProps,
+    FilterPriceProps,
+    FilterSearchProps {}

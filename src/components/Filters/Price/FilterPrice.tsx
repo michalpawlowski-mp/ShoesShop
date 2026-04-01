@@ -1,6 +1,6 @@
 import React from "react";
 import { FilterGroup, FilterLabel, PriceInput } from "../Filters.styles";
-import type { FilterPriceProps } from "../../../types/Filters";
+import type { FilterPriceProps } from "../../../types";
 
 const FilterPrice: React.FC<FilterPriceProps> = ({
   maxPrice,

@@ -1,9 +1,4 @@
-import {
-  ImagesWrapper,
-  Thumbnails,
-  Thumbnail,
-  MainImage,
-} from "./ShoeImages.styles";
+import { ImagesWrapper, Thumbnails, Thumbnail, MainImage } from "./ShoeImages.styles";
 import type { ShoeImagesProps } from "../../../types";
 
 const ShoeImages: React.FC<ShoeImagesProps> = ({
@@ -20,6 +15,7 @@ const ShoeImages: React.FC<ShoeImagesProps> = ({
           <Thumbnail
             key={img}
             src={img}
+            alt={`${model} widok ${i + 1}`}
             selected={i === selectedImage}
             onClick={() => onSelectImage(i)}
           />

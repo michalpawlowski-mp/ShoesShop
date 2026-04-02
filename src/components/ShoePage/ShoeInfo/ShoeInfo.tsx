@@ -1,12 +1,8 @@
-import * as S from "./SheoInfo.styles";
+import * as S from "./ShoeInfo.styles";
 import { formatModelName } from "../../../tools/formatters";
 import type { ShoeInfoProps } from "../../../types";
 
-const ShoeInfo: React.FC<ShoeInfoProps> = ({
-  shoe,
-  selectedSize,
-  onSelectSize,
-}) => {
+const ShoeInfo: React.FC<ShoeInfoProps> = ({ shoe, selectedSize, onSelectSize }) => {
   return (
     <S.InfoWrapper>
       <div>

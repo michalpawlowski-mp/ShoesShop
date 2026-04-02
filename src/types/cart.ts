@@ -1,7 +1,6 @@
 import type { Shoe } from "./shoe";
 
 export type CartItem = {
-  shoe: any;
   brand: string;
   model: string;
   price: number;
@@ -13,5 +12,5 @@ export type CartItem = {
 export type CartContextType = {
   cartItems: CartItem[];
   addToCart: (shoe: Shoe, size: number) => void;
-  removeFromCart: (shoeModel: string, size: number) => void;
+  removeFromCart: (model: string, size: number) => void;
 };

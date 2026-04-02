@@ -1,6 +1,6 @@
 import { useParams } from "react-router";
 import { useCart } from "../Context/CartContext";
-import { finalShoes } from "../../assets/data/dataShoes";
+import { finalShoes } from "../../data/dataShoes";
 import { useState } from "react";
 import { ShoePageWrapper, ShoeDetails } from "./ShoePage.styles";
 import ShoeImages from "./ShoeImages/ShoeImages";

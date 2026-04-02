@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import { finalShoes } from "../assets/data/dataShoes";
+import { finalShoes } from "../data/dataShoes";
 import type { Gender } from "../types/index";
 
 export function useShoeFilters() {
@@ -9,10 +9,7 @@ export function useShoeFilters() {
   const [maxPrice, setMaxPrice] = useState<number | "">("");
   const [search, setSearch] = useState("");
 
-  const brands = useMemo(
-    () => Array.from(new Set(finalShoes.map((s) => s.brand))),
-    [],
-  );
+  const brands = useMemo(() => Array.from(new Set(finalShoes.map((s) => s.brand))), []);
 
   const filteredShoes = useMemo(() => {
     return finalShoes.filter((shoe) => {

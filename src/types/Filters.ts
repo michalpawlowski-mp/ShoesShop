@@ -1,6 +1,6 @@
 import type { Gender } from "./shoe";
 
-export type GenderFilterValue = Gender | "All";
+export type GenderFilterValue = "All" | Gender;
 
 export type PriceValue = number | "";
 
@@ -33,8 +33,4 @@ export type FilterResetProps = Pick<
 >;
 
 export interface FiltersProps
-  extends
-    FilterGenderProps,
-    FilterBrandProps,
-    FilterPriceProps,
-    FilterSearchProps {}
+  extends FilterGenderProps, FilterBrandProps, FilterPriceProps, FilterSearchProps {}

@@ -1,4 +1,4 @@
-type Gender = "Men" | "Women" | "Boy" | "Girl";
+import type { Gender } from "../types";
 
 type ShoeRaw = {
   brand: string;
@@ -12,27 +12,31 @@ type ImageModule = {
   default: string;
 };
 
-const allShoes = import.meta.glob<ImageModule>("../shoes/**", { eager: true });
+const allShoes = import.meta.glob<ImageModule>("../assets/shoes/**/*.avif", {
+  eager: true,
+});
+
+console.log(allShoes);
 
 export const shoes = Object.entries(allShoes).reduce<ShoeRaw[]>((acc, [path, module]) => {
   const parts = path.split("/");
 
-  const brand = parts[2];
-  const group = parts[3] as ShoeRaw["group"];
+  const brand = parts[3];
+  const group = parts[4] as ShoeRaw["group"];
 
   let gender: Gender;
   let model: string;
 
   if (group === "Kids") {
-    gender = parts[4] as Gender;
-    model = parts[5];
+    gender = parts[5] as Gender;
+    model = parts[6];
   } else {
     gender = group;
-    model = parts[4];
+    model = parts[5];
   }
 
   let shoe = acc.find(
-    (item) => item.brand === brand && item.gender === gender && item.model === model
+    (item) => item.brand === brand && item.gender === gender && item.model === model,
   );
 
   if (!shoe) {

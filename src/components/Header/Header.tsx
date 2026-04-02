@@ -3,7 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useCart } from "../Context/CartContext";
 import logoSvg from "/logo-horizontal.svg";
-import cartSvg from "../../assets/cart.svg";
+import cartSvg from "../../assets/images/cart.svg";
 
 const Header: React.FC = () => {
   const { cartItems } = useCart();

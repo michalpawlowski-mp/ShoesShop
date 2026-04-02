@@ -1,5 +1,5 @@
 import { shoes } from "./shoes";
-import type { Shoe } from "../../types/shoe";
+import type { Shoe } from "../types/shoe";
 
 const generateSizes = (from: number, to: number, step = 0.5): number[] => {
   const sizes: number[] = [];
@@ -16,8 +16,8 @@ export const sizingWoman = generateSizes(36, 43);
 export const sizingKids = generateSizes(28, 35);
 
 const priceShoes: number[] = [
-  249, 249, 319, 499, 299, 349, 229, 279, 299, 499, 339, 499, 199, 219, 499,
-  379, 579, 369,
+  249, 249, 319, 499, 299, 349, 229, 279, 299, 499, 339, 499, 199, 219, 499, 379, 579,
+  369,
 ];
 
 export const finalShoes: Shoe[] = shoes.map((shoe, index) => {

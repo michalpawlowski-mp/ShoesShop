@@ -1,8 +1,10 @@
 import { formatModelName } from "../../tools/formatters";
 import * as S from "./ShoeList.style";
 
+import type { Shoe } from "../../types";
+
 type Props = {
-  shoes: typeof import("../../assets/data/dataShoes").finalShoes;
+  shoes: Shoe[];
 };
 
 const ShoeListComponent: React.FC<Props> = ({ shoes }) => {
@@ -12,8 +14,8 @@ const ShoeListComponent: React.FC<Props> = ({ shoes }) => {
         <S.IconCircle>👟</S.IconCircle>
         <S.Title>Brak produktów spełniających wybrane kryteria</S.Title>
         <S.Subtitle>
-          Niestety nie znaleźliśmy tego, czego szukasz. Spróbuj zmienić filtry
-          lub wpisać inną frazę.
+          Niestety nie znaleźliśmy tego, czego szukasz. Spróbuj zmienić filtry lub wpisać
+          inną frazę.
         </S.Subtitle>
       </S.EmptyStateWrapper>
     );
@@ -29,10 +31,7 @@ const ShoeListComponent: React.FC<Props> = ({ shoes }) => {
           <S.ShoeCard>
             <S.ImgWrapper>
               <S.BlurredBackground $bg={shoe.images[2]} />
-              <S.ShoeImage
-                src={shoe.images[2]}
-                alt={`${shoe.brand} ${shoe.model}`}
-              />
+              <S.ShoeImage src={shoe.images[2]} alt={`${shoe.brand} ${shoe.model}`} />
             </S.ImgWrapper>
             <S.ShoeName>
               {shoe.brand} {formatModelName(shoe.model)}

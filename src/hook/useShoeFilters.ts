@@ -1,9 +1,9 @@
 import { useState, useMemo } from "react";
 import { finalShoes } from "../data/dataShoes";
-import type { Gender } from "../types/index";
+import type { GenderFilterValue } from "../types/index";
 
 export function useShoeFilters() {
-  const [gender, setGender] = useState<Gender>("All");
+  const [gender, setGender] = useState<GenderFilterValue>("All");
   const [brand, setBrand] = useState<string | "All">("All");
   const [minPrice, setMinPrice] = useState<number | "">("");
   const [maxPrice, setMaxPrice] = useState<number | "">("");

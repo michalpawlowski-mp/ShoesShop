@@ -9,6 +9,7 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
     return storedCart ? JSON.parse(storedCart) : [];
   });
 
+  // Zapisywanie koszyka do localStorage
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cartItems));
   }, [cartItems]);
@@ -45,8 +46,28 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
     );
   };
 
+  // ← NOWA FUNKCJA: zmiana ilości
+  const updateQuantity = (model: string, size: number, newQuantity: number) => {
+    if (newQuantity < 1) return; // nie pozwalamy na ilość mniejszą niż 1
+
+    setCartItems((prev) =>
+      prev.map((item) =>
+        item.model === model && item.size === size
+          ? { ...item, quantity: newQuantity }
+          : item,
+      ),
+    );
+  };
+
   return (
-    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart }}>
+    <CartContext.Provider
+      value={{
+        cartItems,
+        addToCart,
+        removeFromCart,
+        updateQuantity, // ← dodane
+      }}
+    >
       {children}
     </CartContext.Provider>
   );

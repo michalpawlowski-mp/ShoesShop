@@ -3,14 +3,10 @@ import * as S from "./CartPage.style";
 import { formatModelName } from "../../tools/formatters";
 import { EmptyCart } from "./EmptyCart/EmptyCart";
 
-// CartPage.tsx
 const CartPage: React.FC = () => {
-  const { cartItems, removeFromCart } = useCart();
+  const { cartItems, removeFromCart, updateQuantity } = useCart();
 
-  const totalPrice = cartItems.reduce(
-    (sum, item) => sum + item.price * item.quantity, // item.price nie item.shoe.price
-    0,
-  );
+  const totalPrice = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   if (cartItems.length === 0) {
     return <EmptyCart />;
@@ -22,16 +18,27 @@ const CartPage: React.FC = () => {
         <S.CartTitle>Koszyk</S.CartTitle>
         {cartItems.map((item) => (
           <S.CartItem key={`${item.model}-${item.size}`}>
-            <S.ItemImage
-              src={item.image} // item.image
-              alt={`${item.brand} ${item.model}`}
-            />
+            <S.ItemImage src={item.image} alt={`${item.brand} ${item.model}`} />
             <S.CartItemInfo>
               <S.ItemName>
                 {item.brand} {formatModelName(item.model)}
               </S.ItemName>
               <S.ItemDetails>Rozmiar: {item.size}</S.ItemDetails>
-              <S.ItemDetails>Ilość: {item.quantity}</S.ItemDetails>
+              <S.ItemDetails>
+                Ilość:
+                <S.QuantityButton
+                  onClick={() => updateQuantity(item.model, item.size, item.quantity - 1)}
+                  disabled={item.quantity <= 1}
+                >
+                  −
+                </S.QuantityButton>
+                {item.quantity}
+                <S.QuantityButton
+                  onClick={() => updateQuantity(item.model, item.size, item.quantity + 1)}
+                >
+                  +
+                </S.QuantityButton>
+              </S.ItemDetails>
               <S.RemoveButton onClick={() => removeFromCart(item.model, item.size)}>
                 Usuń
               </S.RemoveButton>

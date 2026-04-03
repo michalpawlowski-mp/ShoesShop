@@ -54,8 +54,9 @@ export const SizeButton = styled.button<{ selected?: boolean }>`
     border-color: #ff7a00;
   }
   @media (min-width: 1215px) {
-    width: 95.5px;
-    height: 75px;
+    width: 85px;
+    height: 70px;
+
     font-size: 1.1rem;
   }
 `;

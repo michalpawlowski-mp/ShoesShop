@@ -76,6 +76,8 @@ export const ItemDetails = styled.p`
   font-size: 0.9rem;
   color: #666;
   margin: 0;
+  display: flex;
+  align-items: center;
 `;
 
 export const ItemPrice = styled.div`
@@ -116,5 +118,28 @@ export const RemoveButton = styled.button`
 
   &:hover {
     text-decoration: underline;
+  }
+`;
+
+export const QuantityButton = styled.button`
+  width: 14px;
+  height: 14px;
+  border: 1px solid #ddd;
+  margin: 5px;
+
+  background: white;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background: #f5f5f5;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
   }
 `;

@@ -8,7 +8,7 @@ import { CartProvider } from "./components/Context/CartContext.tsx";
 createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <GlobalStyle />
-    <BrowserRouter basename="/ShoesShop">
+    <BrowserRouter>
       <CartProvider>
         <App />
       </CartProvider>

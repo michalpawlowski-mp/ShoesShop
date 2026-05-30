@@ -5,7 +5,6 @@ export const CartContainer = styled.div`
   height: 100%;
   display: flex;
   justify-content: center;
-  background-color: #f7f7f5;
   padding: 24px 16px;
 `;
 
@@ -13,7 +12,7 @@ export const CartWrapper = styled.div`
   width: 100%;
   max-width: 720px;
   height: max-content;
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.surface};
   border-radius: 12px;
   border: 0.5px solid #e0e0e0;
   padding: 28px 32px;
@@ -23,9 +22,9 @@ export const CartTitle = styled.h2`
   font-size: 1.6rem;
   font-weight: 600;
   margin: 0 0 20px;
-  color: #1a1a1a;
+  color: ${({ theme }) => theme.text};
   padding-bottom: 16px;
-  border-bottom: 0.5px solid #e8e8e8;
+  border-bottom: 0.5px solid ${({ theme }) => theme.border};
 `;
 
 export const CartItem = styled.div`
@@ -33,7 +32,7 @@ export const CartItem = styled.div`
   align-items: center;
   gap: 20px;
   padding: 20px 0;
-  border-bottom: 0.5px solid #ebebeb;
+  border-bottom: 0.5px solid ${({ theme }) => theme.border};
 
   &:last-child {
     border-bottom: none;
@@ -72,19 +71,19 @@ export const ItemName = styled.h3`
   font-size: 1rem;
   font-weight: 600;
   margin: 0 0 2px;
-  color: #1a1a1a;
+  color: ${({ theme }) => theme.text};
 `;
 
 export const ItemDetails = styled.p`
   font-size: 0.85rem;
-  color: #888;
+  color: ${({ theme }) => theme.text};
   margin: 0 0 10px;
 `;
 
 export const QuantityWrapper = styled.div`
   display: flex;
   align-items: center;
-  border: 0.5px solid #d0d0d0;
+  border: 0.5px solid ${({ theme }) => theme.border};
   border-radius: 8px;
   overflow: hidden;
   width: fit-content;
@@ -97,7 +96,7 @@ export const QuantityButton = styled.button`
   background: transparent;
   font-size: 16px;
   cursor: pointer;
-  color: #1a1a1a;
+  color: ${({ theme }) => theme.text};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -120,9 +119,9 @@ export const QuantityValue = styled.span`
   text-align: center;
   font-size: 0.9rem;
   font-weight: 600;
-  color: #1a1a1a;
-  border-left: 0.5px solid #e8e8e8;
-  border-right: 0.5px solid #e8e8e8;
+  color: ${({ theme }) => theme.text};
+  border-left: 0.5px solid ${({ theme }) => theme.border};
+  border-right: 0.5px solid ${({ theme }) => theme.border};
 `;
 
 export const QuantityRow = styled.div`
@@ -135,7 +134,7 @@ export const QuantityRow = styled.div`
 export const RemoveButton = styled.button`
   background: none;
   border: none;
-  color: #c0392b;
+  color: ${({ theme }) => theme.text};
   font-size: 0.8rem;
   cursor: pointer;
   padding: 0;
@@ -143,14 +142,14 @@ export const RemoveButton = styled.button`
   text-underline-offset: 2px;
 
   &:hover {
-    color: #96281b;
+    color: ${({ theme }) => theme.text};
   }
 `;
 
 export const ItemPrice = styled.div`
   font-size: 1rem;
   font-weight: 600;
-  color: #1a1a1a;
+  color: ${({ theme }) => theme.text};
   flex-shrink: 0;
   min-width: 80px;
   text-align: right;
@@ -166,25 +165,25 @@ export const Summary = styled.div`
   align-items: center;
   margin-top: 20px;
   padding-top: 16px;
-  border-top: 0.5px solid #ccc;
+  border-top: 0.5px solid ${({ theme }) => theme.border};
 `;
 
 export const ItemCount = styled.span`
   font-size: 0.85rem;
-  color: #999;
+  color: ${({ theme }) => theme.text};
 `;
 
 export const TotalPrice = styled.span`
   font-size: 1.25rem;
   font-weight: 700;
-  color: #1a1a1a;
+  color: ${({ theme }) => theme.text};
 `;
 
 export const CheckoutButton = styled.button`
   width: 100%;
   margin-top: 16px;
   padding: 13px;
-  background: #1a1a1a;
+  background: #ff7a00;
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -194,10 +193,10 @@ export const CheckoutButton = styled.button`
   transition: background 0.2s;
 
   &:hover {
-    background: #333;
+    background: #c96100;
   }
 
   &:active {
-    background: #000;
+    background: #ff7a00;
   }
 `;

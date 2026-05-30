@@ -9,11 +9,12 @@ export const GlobalStyle = createGlobalStyle`
 
 }
 body {
-  width: 100vw;
-  height: 100vh;
-  color: white;
-  overflow: hidden;
-}
+    background-color: ${({ theme }) => theme.background};
+    color: ${({ theme }) => theme.text};
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
 ::-webkit-scrollbar {
   display: none;
 }

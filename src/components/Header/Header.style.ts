@@ -7,7 +7,7 @@ export const StyledHeader = styled.header`
   align-items: center;
   justify-content: space-between;
   padding: 10px;
-  background-color: #ffffff;
+  background-color: ${({ theme }) => theme.surface};
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   position: sticky;
   top: 0;

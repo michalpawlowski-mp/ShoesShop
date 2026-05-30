@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const ImagesWrapper = styled.div`
-  background: #fff;
   padding: 10px;
   border-radius: 24px;
   display: flex;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const InfoWrapper = styled.div`
-  color: #000;
+  color: ${({ theme }) => theme.text};
   height: 90%;
   width: 100%;
   margin: 0px;

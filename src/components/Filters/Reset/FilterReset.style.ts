@@ -6,6 +6,7 @@ export const ResetButton = styled.button`
   display: flex;
   justify-content: space-between;
   padding: 5px;
+  color: ${({ theme }) => theme.text};
   border-radius: 10px;
   font-size: 10px;
   &:hover {

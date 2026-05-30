@@ -12,7 +12,7 @@ export const FiltersWrapper = styled.div`
   padding: 10px;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
-  color: #333;
+  color: ${({ theme }) => theme.text};
   flex-shrink: 0;
   height: max-content;
 `;
@@ -49,7 +49,9 @@ export const PriceInput = styled.input`
   width: 100%;
   padding: 8px 10px;
   font-size: 14px;
+  color: ${({ theme }) => theme.text};
   border: 1px solid #ccc;
+  background-color: ${({ theme }) => theme.surface};
   border-radius: 6px;
   outline: none;
   transition:
@@ -57,8 +59,8 @@ export const PriceInput = styled.input`
     box-shadow 0.2s;
 
   &:focus {
-    border-color: #111;
-    box-shadow: 0 0 0 1px #111;
+    border-color: ${({ theme }) => theme.text};
+    box-shadow: 0 0 0 1px ${({ theme }) => theme.text};
   }
 
   &::placeholder {

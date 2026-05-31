@@ -15,7 +15,7 @@ export const EmptyCartWrapper = styled.div`
 `;
 
 export const EmptyCartInfo = styled.h1`
-  color: #000;
+  color: ${({ theme }) => theme.text};
   font-size: 2rem;
   margin: 20px 10px;
 `;

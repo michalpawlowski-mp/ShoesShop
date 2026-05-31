@@ -21,7 +21,7 @@ export const ShoeLink = styled(Link)`
 `;
 
 export const ShoeCard = styled.div`
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.surface};
   border-radius: 15px;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
   cursor: pointer;
@@ -47,7 +47,6 @@ export const ImgWrapper = styled.div`
   height: 180px;
   position: relative;
   overflow: hidden;
-  background-color: #f5f5f5;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -76,18 +75,18 @@ export const ShoeName = styled.h2`
   font-size: 0.9rem;
   font-weight: 600;
   margin: 0.5rem 0.8rem 0;
-  color: #333;
+  color: ${({ theme }) => theme.textShoesName};
 `;
 
 export const ShoeGender = styled.p`
   font-size: 0.85rem;
-  color: #777;
+  color: ${({ theme }) => theme.textShoesGender};
   margin: 0.25rem 0.8rem 0;
 `;
 
 export const ShoePrice = styled.p`
   font-size: 1rem;
   font-weight: bold;
-  color: #000;
+  color: ${({ theme }) => theme.text};
   margin: 0.5rem 0.9rem;
 `;

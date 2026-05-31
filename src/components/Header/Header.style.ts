@@ -42,6 +42,7 @@ export const Cart = styled.div`
 export const CartIcon = styled.img`
   width: 28px;
   height: 28px;
+  filter: ${({ theme }) => (theme.isDark ? "invert(1)" : "none")};
 `;
 
 export const CartCount = styled.span`

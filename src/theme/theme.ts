@@ -2,16 +2,20 @@ export const lightTheme = {
   background: "#f7f7f5",
   surface: "#ffffff",
   text: "#1a1a1a",
+  textShoesName: "#333",
+  textShoesGender: "#777",
   textMuted: "#888",
-  border: "#e0e0e0",
+  isDark: false,
 };
 
 export const darkTheme = {
   background: "#0f0f0f",
   surface: "#1c1c1c",
   text: "#f0f0f0",
+  textShoesName: "#f0f0f0",
+  textShoesGender: "#aaa",
   textMuted: "#aaa",
-  border: "#2e2e2e",
+  isDark: true,
 };
 
 export type AppTheme = typeof lightTheme;

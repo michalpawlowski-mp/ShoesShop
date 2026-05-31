@@ -2,7 +2,7 @@ import React from "react";
 import Filters from "../Filters/Filters";
 import { StyledMain } from "./Main.styles";
 import ShoeList from "../ShoeList/ShoeList";
-import { useShoeFilters } from "../../hook/useShoeFilters";
+import { useShoeFilters } from "../../hooks/useShoeFilters";
 
 const Main: React.FC = () => {
   const {

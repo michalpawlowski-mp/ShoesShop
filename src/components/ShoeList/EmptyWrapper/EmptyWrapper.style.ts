@@ -7,7 +7,6 @@ export const EmptyStateWrapper = styled.div`
   justify-content: center;
   padding: 60px 20px;
   text-align: center;
-  background: #ffffff;
   border: 2px dashed #e2e8f0;
   border-radius: 16px;
   margin: 20px;

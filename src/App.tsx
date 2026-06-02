@@ -7,15 +7,17 @@ import Header from "./components/Header/Header";
 import Main from "./components/Main/Main";
 import ShoePage from "./components/ShoePage/ShoePage";
 import CartPage from "./components/CartPage/CartPage";
+import { useState } from "react";
 
 function App() {
-  const isDark = useSystemTheme();
+  const systemIsDark = useSystemTheme();
+  const [isDark, setIsDark] = useState(systemIsDark);
   const theme = isDark ? darkTheme : lightTheme;
 
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <Header />
+      <Header onToggleTheme={() => setIsDark((prev) => !prev)} isDark={isDark} />
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/:brand/:model" element={<ShoePage />} />

@@ -5,7 +5,12 @@ import { useCart } from "../Context/CartContext";
 import logoSvg from "/logo-horizontal.svg";
 import cartSvg from "../../assets/images/cart.svg";
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  onToggleTheme: () => void;
+  isDark: boolean;
+}
+
+const Header: React.FC<HeaderProps> = ({ onToggleTheme, isDark }) => {
   const { cartItems } = useCart();
   const totalCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
@@ -14,6 +19,9 @@ const Header: React.FC = () => {
       <Link to="/">
         <ShopLogo src={logoSvg} alt="ShoesShop logo" title="ShoesShop" />
       </Link>
+      <button type="button" onClick={onToggleTheme}>
+        {isDark ? "☀️" : "🌙"}
+      </button>
       <Link to="/cart">
         <Cart>
           <CartIcon src={cartSvg} alt="Koszyk" />

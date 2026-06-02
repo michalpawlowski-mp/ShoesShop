@@ -35,7 +35,7 @@ export const Cart = styled.div`
   transition: background-color 0.3s ease;
 
   &:hover {
-    background-color: #f8f9fa;
+    background-color: ${({ theme }) => theme.textMuted};
   }
 `;
 

@@ -23,7 +23,7 @@ export const ShoeLink = styled(Link)`
 export const ShoeCard = styled.div`
   background-color: ${({ theme }) => theme.surface};
   border-radius: 15px;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 12px ${({ theme }) => theme.shadow};
   cursor: pointer;
   overflow: hidden;
   transition:
@@ -33,7 +33,7 @@ export const ShoeCard = styled.div`
   &:hover,
   &:focus-visible {
     transform: translateY(-5px);
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 8px 20px ${({ theme }) => theme.shadowHover};
   }
 
   &:focus-visible {

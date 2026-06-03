@@ -61,3 +61,28 @@ export const CartCount = styled.span`
   right: 4px;
   border: 2px solid white;
 `;
+
+export const ThemeToggle = styled.button`
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: ${({ theme }) => theme.border};
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background 0.2s ease,
+    transform 0.15s ease;
+
+  &:hover {
+    background: ${({ theme }) => theme.hoverBg};
+    transform: rotate(20deg) scale(1.1);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+`;

@@ -1,4 +1,11 @@
-import { StyledHeader, ShopLogo, Cart, CartIcon, CartCount } from "./Header.style";
+import {
+  StyledHeader,
+  ShopLogo,
+  Cart,
+  CartIcon,
+  CartCount,
+  ThemeToggle,
+} from "./Header.style";
 import React from "react";
 import { Link } from "react-router-dom";
 import { useCart } from "../Context/CartContext";
@@ -19,15 +26,17 @@ const Header: React.FC<HeaderProps> = ({ onToggleTheme, isDark }) => {
       <Link to="/">
         <ShopLogo src={logoSvg} alt="ShoesShop logo" title="ShoesShop" />
       </Link>
-      <button type="button" onClick={onToggleTheme}>
-        {isDark ? "☀️" : "🌙"}
-      </button>
-      <Link to="/cart">
-        <Cart>
-          <CartIcon src={cartSvg} alt="Koszyk" />
-          <CartCount>{totalCount}</CartCount>
-        </Cart>
-      </Link>
+      <div style={{ display: "flex" }}>
+        <ThemeToggle type="button" onClick={onToggleTheme} style={{ margin: "auto" }}>
+          {isDark ? "☀️" : "🌙"}
+        </ThemeToggle>
+        <Link to="/cart">
+          <Cart>
+            <CartIcon src={cartSvg} alt="Koszyk" />
+            <CartCount>{totalCount}</CartCount>
+          </Cart>
+        </Link>
+      </div>
     </StyledHeader>
   );
 };

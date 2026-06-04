@@ -16,7 +16,7 @@ export const EmptyStateWrapper = styled.div`
 export const IconCircle = styled.div`
   width: 80px;
   height: 80px;
-  background-color: #fff7ed;
+  filter: ${({ theme }) => (theme.isDark ? "invert(1)" : "none")};
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -26,7 +26,7 @@ export const IconCircle = styled.div`
 `;
 
 export const Title = styled.h2`
-  color: #1e293b;
+  color: ${({ theme }) => theme.text};
   font-size: 1.5rem;
   font-weight: 700;
   margin: 0 0 12px 0;
@@ -34,7 +34,7 @@ export const Title = styled.h2`
 `;
 
 export const Subtitle = styled.p`
-  color: #64748b;
+  color: ${({ theme }) => theme.textSubtitle};
   font-size: 1rem;
   max-width: 400px;
   line-height: 1.6;

@@ -6,6 +6,9 @@ export const CartContainer = styled.div`
   display: flex;
   justify-content: center;
   padding: 24px 16px;
+
+  padding-bottom: 100px;
+  overflow-y: auto;
 `;
 
 export const CartWrapper = styled.div`
@@ -198,5 +201,31 @@ export const CheckoutButton = styled.button`
 
   &:active {
     background: #ff7a00;
+  }
+`;
+
+export const ButtonRow = styled.div`
+  display: flex;
+  gap: 12px;
+  margin-top: 1rem;
+`;
+
+export const ClearCartButton = styled.button`
+  padding: 0 20px;
+  height: 44px;
+  background: transparent;
+  border: 1px solid #e24b4a;
+  color: #e24b4a;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    background 0.2s,
+    color 0.2s;
+
+  &:hover {
+    background: #e24b4a;
+    color: #fff;
   }
 `;

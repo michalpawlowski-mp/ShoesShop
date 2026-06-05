@@ -62,6 +62,11 @@ export const CartCount = styled.span`
   border: 2px solid white;
 `;
 
+export const Wrapper = styled.div`
+  display: flex;
+  gap: 10px;
+`;
+
 export const ThemeToggle = styled.button`
   width: 32px;
   height: 32px;

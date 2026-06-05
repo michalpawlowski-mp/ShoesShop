@@ -5,6 +5,7 @@ import {
   CartIcon,
   CartCount,
   ThemeToggle,
+  Wrapper,
 } from "./Header.style";
 import React from "react";
 import { Link } from "react-router-dom";
@@ -26,7 +27,7 @@ const Header: React.FC<HeaderProps> = ({ onToggleTheme, isDark }) => {
       <Link to="/">
         <ShopLogo src={logoSvg} alt="ShoesShop logo" title="ShoesShop" />
       </Link>
-      <div style={{ display: "flex" }}>
+      <Wrapper>
         <ThemeToggle type="button" onClick={onToggleTheme} style={{ margin: "auto" }}>
           {isDark ? "☀️" : "🌙"}
         </ThemeToggle>
@@ -36,7 +37,7 @@ const Header: React.FC<HeaderProps> = ({ onToggleTheme, isDark }) => {
             <CartCount>{totalCount}</CartCount>
           </Cart>
         </Link>
-      </div>
+      </Wrapper>
     </StyledHeader>
   );
 };

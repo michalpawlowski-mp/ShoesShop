@@ -21,9 +21,7 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
 
       if (existingItem) {
         return prev.map((item) =>
-          item === existingItem
-            ? { ...item, quantity: item.quantity + 1 }
-            : item,
+          item === existingItem ? { ...item, quantity: item.quantity + 1 } : item,
         );
       }
 
@@ -59,6 +57,10 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
     );
   };
 
+  const clearCart = () => {
+    setCartItems([]);
+  };
+
   return (
     <CartContext.Provider
       value={{
@@ -66,6 +68,7 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
         addToCart,
         removeFromCart,
         updateQuantity,
+        clearCart,
       }}
     >
       {children}

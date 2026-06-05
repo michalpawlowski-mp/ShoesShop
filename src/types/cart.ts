@@ -14,4 +14,5 @@ export type CartContextType = {
   addToCart: (shoe: Shoe, size: number) => void;
   removeFromCart: (model: string, size: number) => void;
   updateQuantity: (model: string, size: number, newQuantity: number) => void;
+  clearCart: () => void;
 };

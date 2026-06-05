@@ -4,7 +4,7 @@ import { formatModelName } from "../../tools/formatters";
 import { EmptyCart } from "./EmptyCart/EmptyCart";
 
 const CartPage: React.FC = () => {
-  const { cartItems, removeFromCart, updateQuantity } = useCart();
+  const { cartItems, removeFromCart, updateQuantity, clearCart } = useCart();
 
   const totalPrice = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
@@ -23,18 +23,20 @@ const CartPage: React.FC = () => {
   return (
     <S.CartContainer>
       <S.CartWrapper>
-        <S.CartTitle>Koszyk</S.CartTitle>
-
+        <S.ButtonRow>
+          <S.CartTitle>Koszyk</S.CartTitle>
+          {cartItems.length > 2 && (
+            <S.ClearCartButton onClick={clearCart}>Wyczyść koszyk</S.ClearCartButton>
+          )}
+        </S.ButtonRow>
         {cartItems.map((item) => (
           <S.CartItem key={`${item.model}-${item.size}`}>
             <S.ItemImage src={item.image} alt={`${item.brand} ${item.model}`} />
-
             <S.CartItemInfo>
               <S.ItemName>
                 {item.brand} {formatModelName(item.model)}
               </S.ItemName>
               <S.ItemDetails>Rozmiar: {item.size}</S.ItemDetails>
-
               <S.QuantityRow>
                 <S.QuantityWrapper>
                   <S.QuantityButton
@@ -54,24 +56,20 @@ const CartPage: React.FC = () => {
                     +
                   </S.QuantityButton>
                 </S.QuantityWrapper>
-
                 <S.RemoveButton onClick={() => removeFromCart(item.model, item.size)}>
                   Usuń
                 </S.RemoveButton>
               </S.QuantityRow>
             </S.CartItemInfo>
-
             <S.ItemPrice>{item.price * item.quantity} zł</S.ItemPrice>
           </S.CartItem>
         ))}
-
         <S.Summary>
           <S.ItemCount>
             {itemCount} {pluralForm(itemCount)}
           </S.ItemCount>
           <S.TotalPrice>Suma: {totalPrice} zł</S.TotalPrice>
         </S.Summary>
-
         <S.CheckoutButton>Przejdź do kasy</S.CheckoutButton>
       </S.CartWrapper>
     </S.CartContainer>

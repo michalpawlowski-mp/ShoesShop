@@ -206,6 +206,7 @@ export const CheckoutButton = styled.button`
 
 export const ButtonRow = styled.div`
   display: flex;
+  justify-content: space-between;
   gap: 12px;
   margin-top: 1rem;
 `;

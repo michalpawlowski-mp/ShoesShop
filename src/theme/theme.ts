@@ -20,7 +20,7 @@ export const darkTheme = {
   textSubtitle: "rgb(216, 203, 203)",
   textShoesName: "#f0f0f0",
   textShoesGender: "#aaa",
-  textMuted: "#aaa",
+  textMuted: "#aaaaaa",
   shadow: "rgba(0, 0, 0, 0.1)",
   shadowHover: "rgba(0, 0, 0, 0)",
   border: "#2e2e2e",

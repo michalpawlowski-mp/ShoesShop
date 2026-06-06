@@ -18,7 +18,7 @@ export const StyledHeader = styled.header`
 export const ShopLogo = styled.img`
   height: 50px;
   transition: transform 0.2s ease-in-out;
-
+  filter: drop-shadow(0 4px 8px rgb(170, 170, 170, 0.5));
   &:hover {
     transform: scale(1.05);
   }
